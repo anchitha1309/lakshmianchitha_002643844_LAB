@@ -13,20 +13,14 @@ public class address {
     String apt_no;
     String city;
     String zip_code;
-    String street_Name1;
-    String apt_no1;
-    String city1;
-    String zip_code1;
+    
     
     public address(){
         this.street_Name = "";
         this.apt_no = "";
         this.city = "";
         this.zip_code = "";
-        this.street_Name1 = "";
-        this.apt_no1 = "";
-        this.city1 = "";
-        this.zip_code1 = "";
+        
     }
 
     public String getStreet_Name() {
@@ -61,37 +55,6 @@ public class address {
         this.zip_code = zip_code;
     }
 
-    public String getStreet_Name1() {
-        return street_Name1;
-    }
-
-    public void setStreet_Name1(String street_Name1) {
-        this.street_Name1 = street_Name1;
-    }
-
-    public String getApt_no1() {
-        return apt_no1;
-    }
-
-    public void setApt_no1(String apt_no1) {
-        this.apt_no1 = apt_no1;
-    }
-
-    public String getCity1() {
-        return city1;
-    }
-
-    public void setCity1(String city1) {
-        this.city1 = city1;
-    }
-
-    public String getZip_code1() {
-        return zip_code1;
-    }
-
-    public void setZip_code1(String zip_code1) {
-        this.zip_code1 = zip_code1;
-    }
     
 
     

@@ -48,9 +48,9 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel13" min="-2" pref="158" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                               <Component id="jLabel30" min="-2" pref="96" max="-2" attributes="0"/>
@@ -58,7 +58,6 @@
                               <Component id="fieldphone_personal" min="-2" pref="178" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel15" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
                                   <Component id="jLabel14" alignment="0" min="-2" pref="178" max="-2" attributes="0"/>
@@ -69,7 +68,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel35" min="-2" pref="113" max="-2" attributes="0"/>
-                                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="fieldapt" min="-2" pref="178" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">

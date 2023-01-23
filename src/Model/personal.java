@@ -13,8 +13,11 @@ public class personal {
     private String First_Name;
     private String Last_Name;
     private String College_Name;
-    contact contact;
-    address address;
+    contact personal;
+    contact official;
+    address current ;
+    address permanent;
+    
 
     public String getNUID() {
         return NUID;
@@ -48,29 +51,51 @@ public class personal {
         this.College_Name = College_Name;
     }
 
-    public contact getContact() {
-        return contact;
+   
+
+    public address getCurrent() {
+        return current;
     }
 
-    public void setContact(contact contact) {
-        this.contact = contact;
+    public void setCurrent(address current) {
+        this.current = current;
     }
 
-    public address getAddress() {
-        return address;
+    public address getPermanent() {
+        return permanent;
     }
 
-    public void setAddress(address address) {
-        this.address = address;
+    public void setPermanent(address permanent) {
+        this.permanent = permanent;
     }
+
+    public contact getOfficial() {
+        return official;
+    }
+
+    public void setOfficial(contact official) {
+        this.official = official;
+    }
+
+    public contact getPersonal() {
+        return personal;
+    }
+
+    public void setPersonal(contact personal) {
+        this.personal = personal;
+    }
+
+   
     
     public personal(){
         this.NUID = "";
         this.First_Name = "";
         this.Last_Name = "";
         this.College_Name = "";
-        this.contact = new contact();
-        this.address = new address();
+        this.official = new contact();
+        this.personal=new contact();
+        this.current = new address();
+        this.permanent = new address();
         
     
 }

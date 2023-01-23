@@ -596,40 +596,49 @@ public class NewJFrame extends javax.swing.JFrame {
         String First_Name = fieldfirstname.getText();
         String Last_Name = fieldlastname.getText();
         String Collage_Name = fieldcollagename.getText();
-        String Personal_phone = fieldphone_personal.getText();
-        String Personal_email = fieldemail_personal.getText();
-        String Official_phone = fieldphone_officail.getText();
-        String Official_email = fieldemail_officail.getText();
+        String phone = fieldphone_personal.getText();
+        String email = fieldemail_personal.getText();
+        String o_phone = fieldphone_officail.getText();
+        String o_email = fieldemail_officail.getText();
         String Street_Name = fieldstreetname.getText();
         String Apt_no = fieldapt.getText();
         String City = fieldcity.getText();
         String Zip_Code = fieldzipcode.getText();
-        String Official_Street_Name = fieldstreetname1.getText();
-        String Official_Apt_no = fieldapt1.getText();
-        String Official_City = fieldcity1.getText();
-        String Official_Zip_Code = fieldzipcode1.getText();
+        String perm_Street_Name = fieldstreetname1.getText();
+        String perm_Apt_no = fieldapt1.getText();
+        String perm_City = fieldcity1.getText();
+        String perm_Zip_Code = fieldzipcode1.getText();
         
+       
         
         this.personal.setNUID(NUID);
         this.personal.setFirst_Name(First_Name);
         this.personal.setLast_Name(Last_Name);
         this.personal.setCollege_Name(Collage_Name);
         
-        contact contact = this.personal.getContact();
-        contact.setPersonal_phone(Personal_phone);
-        contact.setPersonal_email(Personal_email);
-        contact.setOfficial_phone(Official_phone);
-        contact.setOfficial_email(Official_email);
+        contact contact = this.personal.getPersonal();
+        contact o_contact = this.personal.getOfficial();
+        contact.setPhone(phone);
+        contact.setEmail(email);
+        o_contact.setPhone(o_phone);
+        o_contact.setEmail(o_email);
         
-        address address = this.personal.getAddress();
-        address.setStreet_Name(Street_Name);
-        address.setApt_no(Apt_no);
-        address.setCity(City);
-        address.setZip_code(Zip_Code);
-        address.setStreet_Name1(Official_Street_Name);
-        address.setApt_no1(Official_Apt_no);
-        address.setCity1(Official_City);
-        address.setZip_code1(Official_Zip_Code);
+        
+        
+        address current = this.personal.getCurrent();
+        address permanent = this.personal.getPermanent();
+        current.setStreet_Name(Street_Name);
+        current.setApt_no(Apt_no);
+        current.setCity(City);
+        current.setZip_code(Zip_Code);
+        permanent.setStreet_Name(perm_Street_Name);
+        permanent.setApt_no(perm_Apt_no);
+        permanent.setCity(perm_City);
+        permanent.setZip_code(perm_Zip_Code);
+        
+        
+        
+        
         
         display();
         
@@ -643,18 +652,18 @@ public class NewJFrame extends javax.swing.JFrame {
         viewfirstname.setText(this.personal.getFirst_Name());
         viewlastname.setText(this.personal.getLast_Name());
         viewcollagename.setText(this.personal.getCollege_Name());
-        viewphone_personal.setText(this.personal.getContact().getPersonal_phone());
-        viewemail_personal.setText(this.personal.getContact().getPersonal_email());
-        viewphone1_official.setText(this.personal.getContact().getOfficial_phone());
-        viewemail_official.setText(this.personal.getContact().getOfficial_email());
-        viewstreet.setText(this.personal.getAddress().getStreet_Name());
-        viewapt.setText(this.personal.getAddress().getApt_no());
-        viewcity.setText(this.personal.getAddress().getCity());
-        viewzipcode.setText(this.personal.getAddress().getZip_code());
-        viewstreet1.setText(this.personal.getAddress().getStreet_Name1());
-        viewapt1.setText(this.personal.getAddress().getApt_no1());
-        viewcity1.setText(this.personal.getAddress().getCity1());
-        viewzipcode1.setText(this.personal.getAddress().getZip_code1());
+        viewphone_personal.setText(this.personal.getPersonal().getPhone());
+        viewemail_personal.setText(this.personal.getPersonal().getEmail());
+        viewphone1_official.setText(this.personal.getOfficial().getPhone());
+        viewemail_official.setText(this.personal.getOfficial().getEmail());
+        viewstreet.setText(this.personal.getCurrent().getStreet_Name());
+        viewapt.setText(this.personal.getCurrent().getApt_no());
+        viewcity.setText(this.personal.getCurrent().getCity());
+        viewzipcode.setText(this.personal.getCurrent().getZip_code());
+        viewstreet1.setText(this.personal.getPermanent().getStreet_Name());
+        viewapt1.setText(this.personal.getPermanent().getApt_no());
+        viewcity1.setText(this.personal.getPermanent().getCity());
+        viewzipcode1.setText(this.personal.getPermanent().getZip_code());
     }
     /**
      * @param args the command line arguments
