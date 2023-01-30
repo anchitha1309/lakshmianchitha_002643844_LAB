@@ -20,7 +20,8 @@ public class CreateJPanel extends javax.swing.JPanel {
      * Creates new form CreateJPanel
      */
     private DeliveryPartner delPackage;
-    private Boolean validate = false;
+    
+    
     public CreateJPanel() {
         initComponents();
     }
@@ -58,9 +59,25 @@ public class CreateJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(51, 255, 255));
 
+        id.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                idFocusLost(evt);
+            }
+        });
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+
         name.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 nameFocusLost(evt);
+            }
+        });
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
             }
         });
 
@@ -180,6 +197,21 @@ public class CreateJPanel extends javax.swing.JPanel {
         
         String CustomerId = id.getText();
         String CustomerName = name.getText();
+        if(CustomerName.isEmpty()){
+            JOptionPane.showMessageDialog(null, "please Fill all fields!");
+        } 
+        else if(CustomerId.isEmpty()){
+            JOptionPane.showMessageDialog(null, "please Fill all fields!");
+        }
+        else if(Id.isEmpty()){
+            JOptionPane.showMessageDialog(null, "please Fill all fields!");
+        }
+        else if(Weight.isEmpty()){
+            JOptionPane.showMessageDialog(null, "please Fill all fields!");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Saved!");
+        }
         
         this.delPackage.setPackageId(Integer.valueOf(Id));
         this.delPackage.setPackageweight(Double.valueOf(Weight));
@@ -187,11 +219,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         Customer customer = this.delPackage.getCustomer();
         customer.setName(CustomerName);
         customer.setCustomerId(Integer.valueOf(CustomerId));
-        if(validate){
-            JOptionPane.showMessageDialog(null, "please Fill all fields!");
-        } else{
-            JOptionPane.showMessageDialog(null, "Saved!");
-        }
+        
                 
         
     }//GEN-LAST:event_savejButtonActionPerformed
@@ -201,10 +229,22 @@ public class CreateJPanel extends javax.swing.JPanel {
         String ProductId = productid.getText();
         String ProductName = productname.getText();
         String ProductPrice = productprice.getText();
+        if(ProductPrice.isEmpty()){
+            JOptionPane.showMessageDialog(null, "please fill all fields!");
+        }
+        else if(ProductName.isEmpty()){
+            JOptionPane.showMessageDialog(null, "please fill all fields!");
+        }
+        else if(ProductId.isEmpty()){
+            JOptionPane.showMessageDialog(null, "please fill all fields!");
+        }
+        else{
+           JOptionPane.showMessageDialog(null, "Product added!"); 
+        }
         
         Product product = this.delPackage.createProduct(Integer.valueOf(ProductId),ProductName,Double.valueOf(ProductPrice));
         
-        JOptionPane.showMessageDialog(null, "Added Product");
+        
 //        product.setProductId(Integer.valueOf(ProductId));
 //        product.setProductName(ProductName);
 //        product.setPrice(Double.valueOf(ProductPrice));
@@ -212,15 +252,22 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void nameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_nameFocusLost
         // TODO add your handling code here:
-        System.out.println(name.getText()+"-- the name");
-        String CustomerName = name.getText();
-        if(CustomerName.isEmpty()) {
-            this.validate=true;
-        } else{
-            this.validate = false;
-        }
+       
         
     }//GEN-LAST:event_nameFocusLost
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
+
+    private void idFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_idFocusLost
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_idFocusLost
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

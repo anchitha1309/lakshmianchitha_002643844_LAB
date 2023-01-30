@@ -6,7 +6,7 @@ package Model;
 
 /**
  *
- * @author fleek_kowshik
+ * @author DELL
  */
 public class Product {
     int productId;
